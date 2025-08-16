@@ -1,171 +1,4 @@
-/* General Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  color: #333;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* Header / Hero */
-header {
-  background: #2E4057;
-  color: #fff;
-  text-align: center;
-  padding: 6rem 2rem;
-}
-header h1 {
-  margin: 0;
-  font-size: 3rem;
-}
-header p {
-  margin: 1rem 0 2rem;
-  font-size: 1.2rem;
-}
-header .btn {
-  background: #8CADA7;
-  color: #000;
-  padding: 0.8rem 1.5rem;
-  margin: 0 0.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-header .btn:hover {
-  background: #F6D8AE;
-}
-header .btn-outline {
-  background: transparent;
-  border: 2px solid #F6D8AE;
-  color: #F6D8AE;
-}
-header .btn-outline:hover {
-  background: #F6D8AE;
-  color: #000;
-}
-
-/* Section Titles */
-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
 /* Projects */
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-.project-card img {
-  width: 100%;          /* Always scales to card width */
-  height: auto;         /* Keeps original aspect ratio */
-  max-height: 300px;    /* Prevents images from being too tall */
-  object-fit: cover;    /* Crops gracefully if max-height applies */
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.project-card a {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #110B11;
-  font-weight: bold;
-}
-.project-card a:hover {
-  text-decoration: underline;
-}
-
-/* Skills */
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-}
-.skills-list li {
-  background: #457cb8;
-  color: #fff;
-  padding: 0.7rem 1rem;
-  border-radius: 5px;
-}
-
-/* Contact */
-#contact p {
-  text-align: center;
-  font-size: 1.1rem;
-}
-#contact a {
-  color: #457cb8;
-  font-weight: bold;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: #f4f4f4;
-  color: #555;
-  margin-top: 2rem;
-}
-
-/* Responsive */
-@media(max-width: 768px) {
-  header h1 {
-    font-size: 2.5rem;
-  }
-  .project-list {
-    flex-direction: column;
-    align-items: center;
-  }
-  .skills-list {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.about-image img {
-  width: 300px;       
-  height: 300px;     
-  border-radius: 10%; 
-  object-fit: cover; 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  border: 2.4px solid #2E4057;
-}
-
-.about-text {
-  flex: 1;
-  min-width: 400px;
-  padding: 20px;
-}
-
-.project-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 3rem;
-  border: 2.4px solid #2E4057;
-}
 .project-list {
   display: flex;
   flex-wrap: wrap;
@@ -177,10 +10,23 @@ footer {
   background: #f4f4f4;
   padding: 1.5rem;
   border-radius: 8px;
-  width: 300px;   /* Desktop size */
-  max-width: 100%; /* Shrinks on mobile */
+  width: 300px;      /* default desktop size */
+  max-width: 100%;   /* allows shrinking */
   text-align: center;
 }
+
+/* Only one definition for project images */
+.project-card img {
+  width: 100%;
+  height: auto;           /* keep natural ratio */
+  max-height: 220px;      /* prevent giant images */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 2.4px solid #2E4057;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   /* Stack About Me image and text */
   .about-container {
@@ -199,6 +45,11 @@ footer {
 
   /* Project cards full width on small screens */
   .project-card {
-    width: 100%;
+    width: 100%;   /* makes cards fill phone width */
+  }
+
+  .about-image img {
+    width: 200px;   /* smaller photo on phone */
+    height: 200px;
   }
 }
