@@ -67,14 +67,15 @@ section h2 {
   gap: 2rem;
   justify-content: center;
 }
-.project-card {
-  background: #F6D8AE;
-  padding: 1.5rem;
+.project-card img {
+  width: 100%;          /* Always scales to card width */
+  height: auto;         /* Keeps original aspect ratio */
+  max-height: 300px;    /* Prevents images from being too tall */
+  object-fit: cover;    /* Crops gracefully if max-height applies */
   border-radius: 8px;
-  width: 300px;
-  text-align: center;
-  border: 2.4px solid #55442e;
+  margin-bottom: 1rem;
 }
+
 .project-card a {
   display: inline-block;
   margin-top: 1rem;
@@ -164,4 +165,40 @@ footer {
   border-radius: 8px;
   margin-bottom: 3rem;
   border: 2.4px solid #2E4057;
+}
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.project-card {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 300px;   /* Desktop size */
+  max-width: 100%; /* Shrinks on mobile */
+  text-align: center;
+}
+@media (max-width: 768px) {
+  /* Stack About Me image and text */
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Smaller header text on mobile */
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  /* Project cards full width on small screens */
+  .project-card {
+    width: 100%;
+  }
 }
